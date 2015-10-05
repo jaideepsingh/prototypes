@@ -1,5 +1,5 @@
 body {
-	margin-top: 60px;
+	margin-top: 70px;
 }
 .top-fixed-container {
 	height: 70px;
@@ -19,6 +19,9 @@ body {
 .top-navigation-bar li {
 	float: left;
 	width: 20%;
+}
+.top-navigation-bar li .step-number {
+	display: none;
 }
 .top-navigation-bar li a {
 	display: block;
@@ -45,6 +48,27 @@ body {
 	width: 960px;
 	margin: 0 auto;
 	padding: 0;
+	position: relative;
+}
+.left-container {
+	margin-right: 350px;
+}
+.right-sidebar {
+	width: 335px;
+	position: fixed;
+	top: 70px;
+	margin-left: 625px;
+}	
+.sidebar-content {
+	border: 1px solid #ddd;
+	position: relative;
+}
+.sidebar-content .mobile-panel {
+	display: none;
+}
+.sidebar-content .details-panel {
+	height: 500px;
+	padding: 0 15px;
 }
 .page-section {
 	height: 800px;
@@ -59,4 +83,52 @@ body {
 	right: 0;
 	left: 0;
 	height: 40px;
+}
+@media screen and (max-width: 767px) {
+	.container {
+		width: 100%;
+	}
+	.left-container {
+		margin-right: 0;
+	}
+	.top-navigation-bar {
+		margin: 0 auto;
+		width: 100%;
+	}
+	.page-section {
+		height: 400px;
+	}
+	.top-navigation-bar li {
+		display: none;
+	}
+	.top-navigation-bar li.active {
+		display: block;
+		width: 100%;
+	}
+	.top-navigation-bar li .step-number {
+		display: inline;
+	}
+	.top-navigation-bar li a {
+		text-align: left;
+		border: 0 none;
+		padding: 8px 12px;
+	}
+	.right-sidebar {
+		width: 100%;
+		margin-left: 0;
+		top: 36px;
+		z-index: 20;
+	}
+	.sidebar-content {
+		border: 0 none;
+		background-color: #CCCCCC;
+	}
+	.sidebar-content .mobile-panel {
+		display: block;
+		padding: 7px 12px;
+	}
+	.sidebar-content .details-panel {
+		display: none;
+	}
+
 }

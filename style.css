@@ -131,6 +131,9 @@ body {
 		background-color: #757575;
 		color: white;
 	}
+	.sidebar-content .mobile-panel .glyphicon {
+		margin-right: 10px;
+	}
 	.sidebar-content .details-panel {
 		display: none;
 	}

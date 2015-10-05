@@ -31,4 +31,7 @@ $(function() {
 			$('#section_five_link').addClass('active').prevAll().addClass('complete');
 		}
 	});
+	$('#sidebar_collapse').click(function(){
+		$('#sidebar_details_panel').slideToggle(300);
+	});
 });

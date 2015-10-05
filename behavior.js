@@ -38,14 +38,14 @@ $(function() {
 		var el = $('#sidebar_details_panel');
 		if(el.is(':visible')) {
 			enableTouchScroll();
-			el.slideUp(200, function() {
+			el.slideUp(250, function() {
 				$('#sidebar_collapse').removeClass('expanded');
 			});
 		} else {
 			disableTouchScroll();
 			el.height(sidebarHeight);
 			$('#sidebar_collapse').addClass('expanded');
-			el.slideDown(200);
+			el.slideDown(250);
 		}
 	});
 });

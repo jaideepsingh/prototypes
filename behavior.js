@@ -32,12 +32,19 @@ $(function() {
 		}
 	});
 	$('#sidebar_collapse').click(function(){
+		var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		var topbarHeight = $('#top-navigation-bar').height();
+		var sidebarHeight = viewportHeight - topbarHeight;
 		var el = $('#sidebar_details_panel');
 		if(el.is(':visible')) {
 			enableTouchScroll();
-			el.slideUp(200);
+			el.slideUp(200, function() {
+				$('#sidebar_collapse').removeClass('expanded');
+			});
 		} else {
 			disableTouchScroll();
+			el.height(sidebarHeight);
+			$('#sidebar_collapse').addClass('expanded');
 			el.slideDown(200);
 		}
 	});

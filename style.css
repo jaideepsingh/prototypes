@@ -127,6 +127,10 @@ body {
 		display: block;
 		padding: 7px 12px;
 	}
+	.sidebar-content .mobile-panel.expanded {
+		background-color: #757575;
+		color: white;
+	}
 	.sidebar-content .details-panel {
 		display: none;
 	}

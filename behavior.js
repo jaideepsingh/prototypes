@@ -32,6 +32,24 @@ $(function() {
 		}
 	});
 	$('#sidebar_collapse').click(function(){
-		$('#sidebar_details_panel').slideToggle(300);
+		var el = $('#sidebar_details_panel');
+		if(el.is(':visible')) {
+			enableTouchScroll();
+			el.slideUp(200);
+		} else {
+			disableTouchScroll();
+			el.slideDown(200);
+		}
 	});
 });
+var disableTouchScroll = function() {
+	$('html, body').on('touchstart touchmove', function(e){
+		if(!(e.target.id === 'sidebar_collapse' || $.contains(document.getElementById('sidebar_collapse'), e.target))) {
+			//prevent native touch activity like scrolling
+			e.preventDefault();
+		}
+	});
+};
+var enableTouchScroll = function() {
+	$('html, body').off('touchstart touchmove');
+};

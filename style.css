@@ -67,7 +67,6 @@ body {
 	display: none;
 }
 .sidebar-content .details-panel {
-	height: 500px;
 	padding: 0 15px;
 }
 .page-section {
@@ -83,6 +82,16 @@ body {
 	right: 0;
 	left: 0;
 	height: 40px;
+}
+.loan-details-row {
+	padding: 12px 0;
+}
+.loan-details-row .details-title {
+	padding-top: 5px;
+}
+.loan-details-row .details-value {
+	font-weight: bold;
+	font-size: 19px;
 }
 @media screen and (max-width: 767px) {
 	.container {
@@ -138,5 +147,4 @@ body {
 		display: none;
 		overflow: auto;
 	}
-
 }

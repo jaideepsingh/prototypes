@@ -51,7 +51,7 @@ $(function() {
 });
 var disableTouchScroll = function() {
 	$('html, body').on('touchstart touchmove', function(e){
-		if(!(e.target.id === 'sidebar_collapse' || $.contains(document.getElementById('sidebar_collapse'), e.target))) {
+		if(!(e.target.id === 'sidebar_collapse' || $.contains(document.getElementById('sidebar_collapse'), e.target) || e.target.id === 'sidebar_details_panel' || $.contains(document.getElementById('sidebar_details_panel'), e.target))) {
 			//prevent native touch activity like scrolling
 			e.preventDefault();
 		}

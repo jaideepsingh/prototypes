@@ -136,6 +136,7 @@ body {
 	}
 	.sidebar-content .details-panel {
 		display: none;
+		overflow: auto;
 	}
 
 }

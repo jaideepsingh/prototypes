@@ -51,5 +51,32 @@ $(function() {
 			});
 		}
 	});
+	$('.top-navigation-bar li:not(.active)').on('click', function() {
+		var el;
+		if(this.id === 'section_one_link') {
+			el = elFirst;
+		}
+		if(this.id === 'section_two_link') {
+			el = elSecond;
+		}
+		if(this.id === 'section_three_link') {
+			el = elThird;
+		}
+		if(this.id === 'section_four_link') {
+			el = elFourth;
+		}
+		if(this.id === 'section_five_link') {
+			el = elFifth;
+		}
+		animateTo(el);
+	});
+	$('.page-section .section-footer button').click(function() {
+		animateTo($(this).parents('.page-section').next('.page-section'));
+	});
 	
 });
+var animateTo = function(el) {
+	$('html, body').animate({
+	    scrollTop: el.offset().top - 69
+	 }, 500);
+};

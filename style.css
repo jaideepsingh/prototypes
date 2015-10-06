@@ -75,6 +75,10 @@ body {
 	background: #f1f1f1;
 	margin-bottom: 30px;
 }
+.page-section h4 {
+	margin: 0;
+	padding: 15px;
+}
 .section-footer {
 	background: #DDD;
 	position: absolute;
@@ -82,6 +86,10 @@ body {
 	right: 0;
 	left: 0;
 	height: 40px;
+	text-align: center;
+}
+.section-footer button {
+	float: right;
 }
 .loan-details-row {
 	padding: 12px 0;
@@ -146,5 +154,8 @@ body {
 	.sidebar-content .details-panel {
 		display: none;
 		overflow: auto;
+	}
+	.section-footer button {
+		float: none;
 	}
 }

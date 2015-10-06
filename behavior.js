@@ -12,6 +12,7 @@ $(function() {
 		four: elFourth.offset().top,
 		five: elFifth.offset().top
 	};
+	var myScroll;
 	$(window).scroll(function() {
 		var windowPosition = $(window).scrollTop() + 70;
 		if(windowPosition >= sectionPositions.one && windowPosition <= (elFirst.outerHeight()+sectionPositions.one)+30) {
@@ -37,26 +38,18 @@ $(function() {
 		var sidebarHeight = viewportHeight - topbarHeight;
 		var el = $('#sidebar_details_panel');
 		if(el.is(':visible')) {
-			enableTouchScroll();
 			el.slideUp(250, function() {
 				$('#sidebar_collapse').removeClass('expanded');
+				myScroll.destroy();
+				myScroll = null;
 			});
 		} else {
-			disableTouchScroll();
 			el.height(sidebarHeight);
 			$('#sidebar_collapse').addClass('expanded');
-			el.slideDown(250);
+			el.slideDown(250, function() {
+				myScroll = new IScroll('#sidebar_details_panel');
+			});
 		}
 	});
+	
 });
-var disableTouchScroll = function() {
-	$('html, body').on('touchstart touchmove', function(e){
-		if(!(e.target.id === 'sidebar_collapse' || $.contains(document.getElementById('sidebar_collapse'), e.target) || e.target.id === 'sidebar_details_panel' || $.contains(document.getElementById('sidebar_details_panel'), e.target))) {
-			//prevent native touch activity like scrolling
-			e.preventDefault();
-		}
-	});
-};
-var enableTouchScroll = function() {
-	$('html, body').off('touchstart touchmove');
-};

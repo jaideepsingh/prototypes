@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GTL - WebID Demo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#verify-redirect').click(function() {
+				$('#verifying-tan').show();
+				setTimeout(function() {
+					$('#verifying-tan').hide();
+					$('#webid-complete').show();
+				}, 3000);
+			});
+		});
+	</script>
+</head>
+<body class="gtl-webid-body">
+	<h1>WebID Solutions</h1>
+	<h2>Your transaction Number: 43455345</h2>
+	<h3>Step 1 - Online verification via WebRTC</h3>
+	<h3>Step 2 - Enter your TAN</h3>
+	<input type="password" />
+	<a id="verify-redirect" href="javascript: void(0);" class="btn btn-primary">Complete</a>
+	<div id="verifying-tan" style="display: none;">Verifying TAN...</div>
+	<div id="webid-complete" style="display: none;">Your WebID verification is now complete. You may now close this window.</div>
+</body>
+</html>

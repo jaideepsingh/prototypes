@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GTL - WebID Demo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#start-redirect').click(function() {
+				$('#redirect-container').show();
+				var popup = window.open("web-id-verification-popup.html", "thePopUp", "width=800, height=800");
+				var pollTimer = window.setInterval(function() {
+				    if (popup.closed !== false) { // !== is required for compatibility with Opera
+				        window.clearInterval(pollTimer);
+				        redirectToSuccess();
+				    }
+				}, 200);
+				function redirectToSuccess() {
+					window.location.href = 'gtl-verification-success.html';
+				};
+			});
+		});
+	</script>
+</head>
+<body class="gtl-webid-body">
+	<h1>GTL Loan Application</h1>
+	<h2>Identity Verification - WebID Solutions</h2>
+	<a id="start-redirect" href="javascript: void()" class="btn btn-primary">Start</a>
+	<div id="redirect-container" style="display: none;">You'll be redirected to WebID Solutions. Please complete the verification process.</div>
+</body>
+</html>
